@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from backend.api.llm import router as llm_router
+
+
 app = FastAPI(title="ML Experiment Lab API")
 
 app.add_middleware(
@@ -13,6 +16,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+app.include_router(llm_router)
 
 
 @app.get("/")
