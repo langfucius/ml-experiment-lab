@@ -3,6 +3,8 @@ import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
 import ApiSettings from "./pages/ApiSettings";
 import DataUpload from "./pages/DataUpload";
+import DataCleaning from "./pages/DataCleaning";
+import EDA from "./pages/EDA";
 import ExperimentLab from "./pages/ExperimentLab";
 import NoiseAnalysis from "./pages/NoiseAnalysis";
 import BradleyTerryEval from "./pages/BradleyTerryEval";
@@ -17,6 +19,8 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="api-settings" element={<ApiSettings />} />
           <Route path="data-upload" element={<DataUpload />} />
+          <Route path="data-cleaning" element={<DataCleaning />} />
+          <Route path="eda" element={<EDA />} />
           <Route path="experiment" element={<ExperimentLab />} />
           <Route path="noise" element={<NoiseAnalysis />} />
           <Route path="bradley-terry" element={<BradleyTerryEval />} />
