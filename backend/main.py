@@ -16,17 +16,15 @@ app = FastAPI(
     version="1.0.0",
 )
 
-
-# 注意：
-# https://ml-experiment-lab-2.onrender.com 是你的前端 Static Site
-# https://ml-experiment-lab-1.onrender.com 是你的后端 API
-# CORS 这里放的是“前端网址”，不是后端网址。
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+
+        # Render deployed frontend URLs
         "https://ml-experiment-lab-2.onrender.com",
+        "https://ml-experiment-lab-2-2.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
