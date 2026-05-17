@@ -10,13 +10,23 @@ from backend.api.llm import router as llm_router
 from backend.api.report import router as report_router
 
 
-app = FastAPI(title="ML Experiment Lab API")
+app = FastAPI(
+    title="ML Experiment Lab API",
+    description="Backend API for ML Experiment Lab",
+    version="1.0.0",
+)
 
+
+# 注意：
+# https://ml-experiment-lab-2.onrender.com 是你的前端 Static Site
+# https://ml-experiment-lab-1.onrender.com 是你的后端 API
+# CORS 这里放的是“前端网址”，不是后端网址。
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        "https://ml-experiment-lab-2.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
