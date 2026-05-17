@@ -305,11 +305,13 @@ export async function runExperiment(payload: ExperimentRunRequest) {
     payload
   );
 
+  localStorage.setItem("last_experiment_results", JSON.stringify(response.data));
+
   return response.data;
 }
 
 // =============================
-// Dynamic Experiment
+// Dynamic Parameter Experiment
 // =============================
 
 export type DynamicExperimentRequest = {
@@ -349,6 +351,8 @@ export async function runDynamicExperiment(payload: DynamicExperimentRequest) {
     "/api/experiment/dynamic",
     payload
   );
+
+  localStorage.setItem("last_dynamic_experiment", JSON.stringify(response.data));
 
   return response.data;
 }
@@ -400,6 +404,8 @@ export async function runBradleyTerry(payload: BradleyTerryRunRequest) {
     "/api/bradley-terry/run",
     payload
   );
+
+  localStorage.setItem("last_bradley_terry_result", JSON.stringify(response.data));
 
   return response.data;
 }
